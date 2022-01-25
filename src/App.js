@@ -13,6 +13,9 @@ import NuevoCliente from './components/clientes/NuevoCliente';
 import EditarCliente from './components/clientes/EditarCliente';
 
 import Productos from './components/productos/Productos';
+import EditarProducto from './components/productos/EditarProducto';
+import NuevoProducto from './components/productos/NuevoProducto';
+
 import Pedidos from './components/pedidos/Pedidos';
 
 function App() {
@@ -24,17 +27,21 @@ function App() {
 					<Navegacion />
 
 					<main className="caja-contenido col-9">
-							<Routes>
-								<Route path="/" element={<Clientes />} />
-                <Route path="/clientes/nuevo" element={<NuevoCliente />} />
-                <Route path="/clientes/editar/:id" element={<EditarCliente />} />
-								<Route path="/productos" element={<Productos />} />
-								<Route path="/pedidos" element={<Pedidos />} />
-							</Routes>
+						<Routes>
+							<Route path="/" element={<Clientes />} />
+							<Route path="/clientes/nuevo" element={<NuevoCliente />} />
+							<Route path="/clientes/editar/:id" element={<EditarCliente />} />
+
+							<Route path="/productos" element={<Productos />} />
+							<Route path="/productos/editar/:id" element={<EditarProducto />} />
+							<Route path="/productos/nuevo" element={<NuevoProducto />} />
+
+							<Route path="/pedidos" element={<Pedidos />} />
+						</Routes>
 					</main>
 				</div>
 			</Fragment>
-    </BrowserRouter>
+		</BrowserRouter>
 	);
 }
 
