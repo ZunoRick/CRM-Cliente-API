@@ -17,6 +17,7 @@ import EditarProducto from './components/productos/EditarProducto';
 import NuevoProducto from './components/productos/NuevoProducto';
 
 import Pedidos from './components/pedidos/Pedidos';
+import NuevoPedido from './components/pedidos/NuevoPedido';
 
 function App() {
 	return (
@@ -37,6 +38,7 @@ function App() {
 							<Route path="/productos/nuevo" element={<NuevoProducto />} />
 
 							<Route path="/pedidos" element={<Pedidos />} />
+							<Route path="/pedidos/nuevo/:id" element={<NuevoPedido />} />
 						</Routes>
 					</main>
 				</div>
