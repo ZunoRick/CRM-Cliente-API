@@ -1,10 +1,16 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import clienteAxios from '../../config/axios';
 
+//importar el Context
+import { CRMContext } from '../../context/CRMContext';
+
 const NuevoCliente = () => {
-const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    //Utilizar valores del context
+	const [auth, guardarAuth] = useContext(CRMContext);
 
     //Cliente = state, guardarCliente = función para guardar el state
 	const [cliente, guardarCliente] = useState({
@@ -62,6 +68,11 @@ const navigate = useNavigate();
         //return true o false
         return valido;
     }
+
+    //Verificar si el usuario está autenticado
+    if (!auth.auth && (localStorage.getItem('token') !== auth.token) ) {
+        navigate('/iniciar-sesion');
+    };
 
 	return (
 		<Fragment>
