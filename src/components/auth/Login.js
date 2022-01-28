@@ -42,12 +42,19 @@ function Login() {
             //Redireccionar
 			navigate('/');
         } catch (error) {
-            console.log(error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Hubo un error',
-                text: error.response.data.mensaje,
-            });
+            if (error.response) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Hubo un error',
+                    text: error.response.data.mensaje,
+                });
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Hubo un error',
+                    text: 'Hubo un error',
+                });
+            }
         }
     }
 

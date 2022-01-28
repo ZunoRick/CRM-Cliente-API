@@ -35,7 +35,7 @@ function Producto({producto}) {
                 <p className="precio">${precio}</p>
                 {
                     imagen ? (
-                        <img src={`http://localhost:5000/uploads/${imagen}`} alt={imagen} />
+                        <img src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${imagen}`} alt={imagen} />
                     ) : null
                 }
             </div>
